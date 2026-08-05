@@ -36,7 +36,7 @@
       <div class="d-flex align-items-center gap-2">
         <img
           src="assets/img/profile-img.jpg"
-          class="rounded-circle"
+          class="profile-img-sidebarMOBILE rounded-circle"
           width="35"
           height="35"
           style="object-fit: cover"
@@ -257,7 +257,8 @@
                 <ul class="list-unstyled mb-0">
                   <li class="mb-2">
                     <i class="bi bi-check2-circle me-2 text-success"></i>HTML,
-                    CSS, JavaScript, Bootstrap Framework/AJAX
+                    CSS, JavaScript, Bootstrap Framework, AJAX, Tailwind
+                    Framework
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check2-circle me-2 text-success"></i>SMS
@@ -290,11 +291,11 @@
                 <ul class="list-unstyled mb-0">
                   <li class="mb-2">
                     <i class="bi bi-check2-circle me-2 text-success"></i>Video
-                    Editing (Premiere Pro, Capcut)
+                    Editing (Adobe Premiere Pro, Capcut)
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check2-circle me-2 text-success"></i>Photo
-                    Editing (Photoshop, Canva)
+                    Editing (Adobe Photoshop, Canva, Adobe Illustrator)
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check2-circle me-2 text-success"></i
@@ -908,7 +909,7 @@
       function updateProfileImages(isLightMode) {
         const targetImg = isLightMode ? SUNGLASSES_IMG : NORMAL_IMG;
         const profileImgs = document.querySelectorAll(
-          ".profile-img-about, .profile-img-sidebar",
+          ".profile-img-about, .profile-img-sidebar, .profile-img-sidebarMOBILE",
         );
 
         profileImgs.forEach((img) => {
@@ -1048,31 +1049,31 @@
       });
 
       // Disable right-click context menu
-      document.addEventListener("contextmenu", (event) =>
-        event.preventDefault(),
-      );
+      // document.addEventListener("contextmenu", (event) =>
+      //   event.preventDefault(),
+      // );
 
-      // Disable key shortcuts for Inspect Element and View Source
-      document.addEventListener("keydown", (event) => {
-        // Prevent F12
-        if (event.key === "F12") {
-          event.preventDefault();
-        }
+      // // Disable key shortcuts for Inspect Element and View Source
+      // document.addEventListener("keydown", (event) => {
+      //   // Prevent F12
+      //   if (event.key === "F12") {
+      //     event.preventDefault();
+      //   }
 
-        // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-        if (
-          event.ctrlKey &&
-          event.shiftKey &&
-          ["I", "J", "C", "i", "j", "c"].includes(event.key)
-        ) {
-          event.preventDefault();
-        }
+      //   // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+      //   if (
+      //     event.ctrlKey &&
+      //     event.shiftKey &&
+      //     ["I", "J", "C", "i", "j", "c"].includes(event.key)
+      //   ) {
+      //     event.preventDefault();
+      //   }
 
-        // Prevent Ctrl+U (View Source)
-        if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-          event.preventDefault();
-        }
-      });
+      //   // Prevent Ctrl+U (View Source)
+      //   if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+      //     event.preventDefault();
+      //   }
+      // });
     </script>
   </body>
 </html>
