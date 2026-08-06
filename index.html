@@ -1049,31 +1049,31 @@
       });
 
       // Disable right-click context menu
-      // document.addEventListener("contextmenu", (event) =>
-      //   event.preventDefault(),
-      // );
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault(),
+      );
 
-      // // Disable key shortcuts for Inspect Element and View Source
-      // document.addEventListener("keydown", (event) => {
-      //   // Prevent F12
-      //   if (event.key === "F12") {
-      //     event.preventDefault();
-      //   }
+      // Disable key shortcuts for Inspect Element and View Source
+      document.addEventListener("keydown", (event) => {
+        // Prevent F12
+        if (event.key === "F12") {
+          event.preventDefault();
+        }
 
-      //   // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-      //   if (
-      //     event.ctrlKey &&
-      //     event.shiftKey &&
-      //     ["I", "J", "C", "i", "j", "c"].includes(event.key)
-      //   ) {
-      //     event.preventDefault();
-      //   }
+        // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          ["I", "J", "C", "i", "j", "c"].includes(event.key)
+        ) {
+          event.preventDefault();
+        }
 
-      //   // Prevent Ctrl+U (View Source)
-      //   if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-      //     event.preventDefault();
-      //   }
-      // });
+        // Prevent Ctrl+U (View Source)
+        if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+          event.preventDefault();
+        }
+      });
     </script>
   </body>
 </html>
