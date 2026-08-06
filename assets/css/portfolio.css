@@ -216,7 +216,7 @@ body {
 
 /* Scrollable Container with Snap Effect */
 .shorts-feed-container {
-  max-height: 650px;
+  max-height: 630px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scrollbar-width: none; /* Firefox */
