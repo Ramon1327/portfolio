@@ -2478,16 +2478,36 @@
     <script>
       const cursor = document.getElementById("cursor");
 
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+      /* =========================================================
+     DESKTOP CURSOR
+     ========================================================= */
 
-        createTrailParticle(e.clientX, e.clientY);
+      document.addEventListener("mousemove", (e) => {
+        // Only run custom cursor on devices with a mouse
+        if (window.matchMedia("(pointer: fine)").matches) {
+          if (cursor) {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+          }
+
+          createTrailParticle(e.clientX, e.clientY);
+        }
       });
 
+      /* =========================================================
+     PARTICLE TRAIL
+     ========================================================= */
+
       function createTrailParticle(x, y) {
+        // Don't create particles on mobile
+        if (!window.matchMedia("(pointer: fine)").matches) {
+          return;
+        }
+
         const trail = document.createElement("div");
+
         trail.className = "cursor-trail";
+
         trail.style.left = `${x + 4}px`;
         trail.style.top = `${y + 4}px`;
 
@@ -2498,18 +2518,74 @@
         }, 400);
       }
 
+      /* =========================================================
+     DESKTOP CLICK EFFECT
+     ========================================================= */
+
       document.addEventListener("click", (e) => {
+        createClickEffect(e.clientX, e.clientY);
+      });
+
+      /* =========================================================
+     MOBILE TOUCH EFFECT
+     ========================================================= */
+
+      document.addEventListener(
+        "touchstart",
+        (e) => {
+          const touch = e.touches[0];
+
+          if (!touch) return;
+
+          createClickEffect(touch.clientX, touch.clientY);
+        },
+        { passive: true },
+      );
+
+      /* =========================================================
+     CREATE ARC REACTOR EFFECT
+     ========================================================= */
+
+      function createClickEffect(x, y) {
         const ripple = document.createElement("div");
+
         ripple.className = "cursor-click-effect";
-        ripple.style.left = `${e.clientX}px`;
-        ripple.style.top = `${e.clientY}px`;
+
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
 
         document.body.appendChild(ripple);
 
         setTimeout(() => {
           ripple.remove();
-        }, 400);
-      });
+        }, 600);
+      }
+
+      /* =========================================================
+     MOBILE SCROLL EFFECT
+     ========================================================= */
+
+      let scrollTimeout;
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          // Only activate on touchscreen devices
+          if (!window.matchMedia("(pointer: coarse)").matches) {
+            return;
+          }
+
+          clearTimeout(scrollTimeout);
+
+          // Create effect near the center of the screen
+          createClickEffect(window.innerWidth / 2, window.innerHeight / 2);
+
+          scrollTimeout = setTimeout(() => {
+            // Prevent excessive effects while scrolling
+          }, 150);
+        },
+        { passive: true },
+      );
     </script>
   </body>
 </html>
