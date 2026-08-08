@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<rect width="400" height="400" fill="#fff"/>
+<path d="M94 236c15-71 53-112 112-112 63 0 97 42 102 105-62-28-139-25-214 7z" fill="#f1f3ef" stroke="#d9ded8" stroke-width="5"/>
+<path d="M95 236c70-20 143-18 213 6-49 54-133 62-213 9z" fill="#dfe4de"/>
+<path d="M166 164c17-12 50-15 68-3" fill="none" stroke="#1a262a" stroke-width="8"/>
+<text x="200" y="201" text-anchor="middle" fill="#1a262a" font-family="Arial" font-size="16" font-weight="800">PICKLEPRO</text>
+</svg>

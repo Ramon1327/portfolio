@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<rect width="400" height="400" fill="#fff"/>
+<path d="M82 145c0-18 15-32 33-32h170c18 0 33 14 33 32v126c0 20-16 36-36 36H118c-20 0-36-16-36-36z" fill="#111d22"/>
+<path d="M145 113c0-47 110-47 110 0" fill="none" stroke="#25383e" stroke-width="20" stroke-linecap="round"/>
+<rect x="110" y="164" width="180" height="8" rx="4" fill="#caff00"/>
+<text x="200" y="230" text-anchor="middle" fill="#fff" font-family="Arial" font-size="25" font-weight="800">PICKLEPRO</text>
+<circle cx="200" cy="257" r="18" fill="#caff00"/>
+</svg>

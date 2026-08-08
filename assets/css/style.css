@@ -253,10 +253,9 @@ body {
   opacity: 0;
 }
 
-/* Custom Cursor: Hidden by default on Mobile & Touch Devices */
+/* Custom Cursor & Trail: Hidden by default on Mobile & Touch Devices */
 .custom-cursor,
-.cursor-trail,
-.cursor-click-effect {
+.cursor-trail {
   display: none !important;
 }
 
@@ -315,37 +314,39 @@ body {
       opacity: 1;
       transform: scale(1.2);
     }
+
     100% {
       opacity: 0;
       transform: scale(0.1);
     }
   }
+}
 
-  /* Arc Reactor Pulse / Click Effect */
-  .cursor-click-effect {
-    display: block !important;
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 2px solid #80f3ff;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9997;
-    transform: translate(-50%, -50%) scale(1);
-    animation: arcPulse 0.4s ease-out forwards;
-    box-shadow:
-      0 0 12px #00d8ff,
-      inset 0 0 12px #00d8ff;
+/* Click Effect - Works on BOTH Desktop and Mobile */
+.cursor-click-effect {
+  display: block !important;
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #80f3ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%) scale(1);
+  animation: arcPulse 0.4s ease-out forwards;
+  box-shadow:
+    0 0 12px #00d8ff,
+    inset 0 0 12px #00d8ff;
+}
+
+@keyframes arcPulse {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.2);
   }
 
-  @keyframes arcPulse {
-    0% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(0.2);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(2.5);
-    }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
   }
 }
