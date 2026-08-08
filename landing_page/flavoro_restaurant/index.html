@@ -1,304 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Flavoro Restaurant — delicious food and unforgettable moments.">
-  <title>Flavoro Restaurant</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flavoro Restaurant — delicious food and unforgettable moments."
+    />
+    <title>Flavoro Restaurant</title>
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top flavoro-nav">
-    <div class="container">
-      <a class="navbar-brand flavoro-logo" href="#home">
-        <span class="logo-icon"><i class="bi bi-egg-fried"></i></span>
-        <span>Flavoro<small>RESTAURANT</small></span>
-      </a>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top flavoro-nav">
+      <div class="container">
+        <a class="navbar-brand flavoro-logo" href="#home">
+          <span class="logo-icon"><i class="bi bi-egg-fried"></i></span>
+          <span>Flavoro<small>RESTAURANT</small></span>
+        </a>
 
-      <button class="navbar-toggler border-0 shadow-none" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="#specials">Specials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <a href="#reservation" class="btn btn-gold">
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#specials">Specials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#reservation" class="btn btn-gold">
+            <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6 hero-content">
+            <p class="script-label">Welcome to Flavoro</p>
+            <h1>Delicious Food,<br />Unforgettable<br />Moments</h1>
+            <p class="hero-text">
+              Experience a perfect blend of flavors, crafted with the freshest
+              ingredients and passion.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#menu" class="btn btn-gold btn-lg">
+                <i class="bi bi-fork-knife me-2"></i>View Our Menu
+              </a>
+              <a href="#reservation" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3 feature-item">
+            <div class="feature-icon"><i class="bi bi-basket2"></i></div>
+            <h5>Fresh Ingredients</h5>
+            <p>We use only the freshest ingredients for the best flavors.</p>
+          </div>
+          <div class="col-6 col-lg-3 feature-item">
+            <div class="feature-icon"><i class="bi bi-egg-fried"></i></div>
+            <h5>Expert Chefs</h5>
+            <p>
+              Our chefs bring years of experience and passion to every dish.
+            </p>
+          </div>
+          <div class="col-6 col-lg-3 feature-item">
+            <div class="feature-icon"><i class="bi bi-shop"></i></div>
+            <h5>Cozy Ambiance</h5>
+            <p>A warm and welcoming place perfect for any occasion.</p>
+          </div>
+          <div class="col-6 col-lg-3 feature-item">
+            <div class="feature-icon"><i class="bi bi-heart-fill"></i></div>
+            <h5>Made with Love</h5>
+            <p>Every dish is made with love and a touch of creativity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="dark-section py-5">
+      <div class="container py-4">
+        <div class="section-heading text-center">
+          <span>Our Menu</span>
+          <h2>Chef's Specialties</h2>
+          <div class="heading-line"><i class="bi bi-dot"></i></div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-sm-6 col-lg-3">
+            <article class="menu-card">
+              <img src="assets/pasta.jpg" alt="Creamy prawn pasta" />
+              <div class="menu-card-body">
+                <h3>Creamy Prawn Pasta</h3>
+                <p>
+                  Pasta in a rich and creamy sauce topped with juicy prawns.
+                </p>
+                <strong>$16.99</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="menu-card">
+              <img src="assets/steak.jpg" alt="Grilled ribeye steak" />
+              <div class="menu-card-body">
+                <h3>Grilled Ribeye Steak</h3>
+                <p>Tender ribeye steak grilled to perfection with herbs.</p>
+                <strong>$24.99</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="menu-card">
+              <img src="assets/salmon.jpg" alt="Lemon butter salmon" />
+              <div class="menu-card-body">
+                <h3>Lemon Butter Salmon</h3>
+                <p>
+                  Pan-seared salmon with lemon butter sauce and seasonal
+                  vegetables.
+                </p>
+                <strong>$18.99</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="menu-card">
+              <img src="assets/cake.jpg" alt="Chocolate lava cake" />
+              <div class="menu-card-body">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Warm chocolate cake with a molten center.</p>
+                <strong>$7.99</strong>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="#reservation" class="btn btn-gold">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section py-5">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img
+              src="assets/interior.jpg"
+              class="img-fluid about-image"
+              alt="Flavoro restaurant interior"
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="section-heading text-start">
+              <span>Our Story</span>
+              <h2>Passion for Food,<br />Love for People</h2>
+            </div>
+            <p>
+              At Flavoro, we believe that great food brings people together. Our
+              mission is to serve delicious meals made from the freshest
+              ingredients in a cozy and welcoming atmosphere.
+            </p>
+            <a href="#contact" class="btn btn-gold mt-2">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery-section py-5">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span>A Taste of Flavoro</span>
+          <h2>From Our Kitchen</h2>
+        </div>
+        <div class="row g-3 mt-3">
+          <div class="col-6 col-lg-3">
+            <img src="assets/pasta.jpg" class="gallery-img" alt="Pasta" />
+          </div>
+          <div class="col-6 col-lg-3">
+            <img src="assets/steak.jpg" class="gallery-img" alt="Steak" />
+          </div>
+          <div class="col-6 col-lg-3">
+            <img src="assets/salmon.jpg" class="gallery-img" alt="Salmon" />
+          </div>
+          <div class="col-6 col-lg-3">
+            <img src="assets/cake.jpg" class="gallery-img" alt="Dessert" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVATION CTA -->
+    <section id="reservation" class="reservation-section">
+      <div class="reservation-overlay"></div>
+      <div class="container position-relative text-center">
+        <span class="script-label">Book a Table</span>
+        <h2>Ready for a Great Dining Experience?</h2>
+        <p>
+          Reserve your table now and enjoy an unforgettable meal with your loved
+          ones.
+        </p>
+        <a href="#contact" class="btn btn-gold btn-lg">
           <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
         </a>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <!-- HERO -->
-  <header id="home" class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-6 hero-content">
-          <p class="script-label">Welcome to Flavoro</p>
-          <h1>Delicious Food,<br>Unforgettable<br>Moments</h1>
-          <p class="hero-text">
-            Experience a perfect blend of flavors, crafted with the freshest
-            ingredients and passion.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#menu" class="btn btn-gold btn-lg">
-              <i class="bi bi-fork-knife me-2"></i>View Our Menu
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section py-5">
+      <div class="container py-4">
+        <div class="section-heading text-center">
+          <span>Get in Touch</span>
+          <h2>Visit Flavoro</h2>
+        </div>
+        <div class="row justify-content-center g-4 mt-2">
+          <div class="col-md-4 text-center contact-box">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h5>Location</h5>
+            <p>123 Food Street, Flavor Town</p>
+          </div>
+          <div class="col-md-4 text-center contact-box">
+            <i class="bi bi-telephone-fill"></i>
+            <h5>Call Us</h5>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="col-md-4 text-center contact-box">
+            <i class="bi bi-envelope-fill"></i>
+            <h5>Email</h5>
+            <p>info@flavoro.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="navbar-brand flavoro-logo" href="#home">
+              <span class="logo-icon"><i class="bi bi-egg-fried"></i></span>
+              <span>Flavoro<small>RESTAURANT</small></span>
             </a>
-            <a href="#reservation" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
-            </a>
+            <p class="mt-3 footer-copy">
+              Thank you for being a part of our journey. We can't wait to serve
+              you the best meals.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="container">
-      <div class="row g-4 text-center">
-        <div class="col-6 col-lg-3 feature-item">
-          <div class="feature-icon"><i class="bi bi-basket2"></i></div>
-          <h5>Fresh Ingredients</h5>
-          <p>We use only the freshest ingredients for the best flavors.</p>
-        </div>
-        <div class="col-6 col-lg-3 feature-item">
-          <div class="feature-icon"><i class="bi bi-egg-fried"></i></div>
-          <h5>Expert Chefs</h5>
-          <p>Our chefs bring years of experience and passion to every dish.</p>
-        </div>
-        <div class="col-6 col-lg-3 feature-item">
-          <div class="feature-icon"><i class="bi bi-shop"></i></div>
-          <h5>Cozy Ambiance</h5>
-          <p>A warm and welcoming place perfect for any occasion.</p>
-        </div>
-        <div class="col-6 col-lg-3 feature-item">
-          <div class="feature-icon"><i class="bi bi-heart-fill"></i></div>
-          <h5>Made with Love</h5>
-          <p>Every dish is made with love and a touch of creativity.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section id="menu" class="dark-section py-5">
-    <div class="container py-4">
-      <div class="section-heading text-center">
-        <span>Our Menu</span>
-        <h2>Chef's Specialties</h2>
-        <div class="heading-line"><i class="bi bi-dot"></i></div>
-      </div>
-
-      <div class="row g-4 mt-2">
-        <div class="col-sm-6 col-lg-3">
-          <article class="menu-card">
-            <img src="assets/pasta.jpg" alt="Creamy prawn pasta">
-            <div class="menu-card-body">
-              <h3>Creamy Prawn Pasta</h3>
-              <p>Pasta in a rich and creamy sauce topped with juicy prawns.</p>
-              <strong>$16.99</strong>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-sm-6 col-lg-3">
-          <article class="menu-card">
-            <img src="assets/steak.jpg" alt="Grilled ribeye steak">
-            <div class="menu-card-body">
-              <h3>Grilled Ribeye Steak</h3>
-              <p>Tender ribeye steak grilled to perfection with herbs.</p>
-              <strong>$24.99</strong>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-sm-6 col-lg-3">
-          <article class="menu-card">
-            <img src="assets/salmon.jpg" alt="Lemon butter salmon">
-            <div class="menu-card-body">
-              <h3>Lemon Butter Salmon</h3>
-              <p>Pan-seared salmon with lemon butter sauce and seasonal vegetables.</p>
-              <strong>$18.99</strong>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-sm-6 col-lg-3">
-          <article class="menu-card">
-            <img src="assets/cake.jpg" alt="Chocolate lava cake">
-            <div class="menu-card-body">
-              <h3>Chocolate Lava Cake</h3>
-              <p>Warm chocolate cake with a molten center.</p>
-              <strong>$7.99</strong>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="#reservation" class="btn btn-gold">View Full Menu</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="about-section py-5">
-    <div class="container py-4">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <img src="assets/interior.jpg" class="img-fluid about-image" alt="Flavoro restaurant interior">
-        </div>
-        <div class="col-lg-6">
-          <div class="section-heading text-start">
-            <span>Our Story</span>
-            <h2>Passion for Food,<br>Love for People</h2>
+          <div class="col-6 col-lg-2">
+            <h6>Quick Links</h6>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
           </div>
-          <p>
-            At Flavoro, we believe that great food brings people together.
-            Our mission is to serve delicious meals made from the freshest
-            ingredients in a cozy and welcoming atmosphere.
-          </p>
-          <a href="#contact" class="btn btn-gold mt-2">Learn More About Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery-section py-5">
-    <div class="container">
-      <div class="section-heading text-center">
-        <span>A Taste of Flavoro</span>
-        <h2>From Our Kitchen</h2>
-      </div>
-      <div class="row g-3 mt-3">
-        <div class="col-6 col-lg-3"><img src="assets/pasta.jpg" class="gallery-img" alt="Pasta"></div>
-        <div class="col-6 col-lg-3"><img src="assets/steak.jpg" class="gallery-img" alt="Steak"></div>
-        <div class="col-6 col-lg-3"><img src="assets/salmon.jpg" class="gallery-img" alt="Salmon"></div>
-        <div class="col-6 col-lg-3"><img src="assets/cake.jpg" class="gallery-img" alt="Dessert"></div>
-      </div>
-    </div>
-  </section>
+          <div class="col-6 col-lg-3">
+            <h6>Opening Hours</h6>
+            <p><strong>Monday - Thursday</strong><br />11:00 AM - 10:00 PM</p>
+            <p><strong>Friday - Saturday</strong><br />11:00 AM - 11:00 PM</p>
+            <p><strong>Sunday</strong><br />11:00 AM - 9:00 PM</p>
+          </div>
 
-  <!-- RESERVATION CTA -->
-  <section id="reservation" class="reservation-section">
-    <div class="reservation-overlay"></div>
-    <div class="container position-relative text-center">
-      <span class="script-label">Book a Table</span>
-      <h2>Ready for a Great Dining Experience?</h2>
-      <p>Reserve your table now and enjoy an unforgettable meal with your loved ones.</p>
-      <a href="#contact" class="btn btn-gold btn-lg">
-        <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section py-5">
-    <div class="container py-4">
-      <div class="section-heading text-center">
-        <span>Get in Touch</span>
-        <h2>Visit Flavoro</h2>
-      </div>
-      <div class="row justify-content-center g-4 mt-2">
-        <div class="col-md-4 text-center contact-box">
-          <i class="bi bi-geo-alt-fill"></i>
-          <h5>Location</h5>
-          <p>123 Food Street, Flavor Town</p>
-        </div>
-        <div class="col-md-4 text-center contact-box">
-          <i class="bi bi-telephone-fill"></i>
-          <h5>Call Us</h5>
-          <p>+1 (555) 123-4567</p>
-        </div>
-        <div class="col-md-4 text-center contact-box">
-          <i class="bi bi-envelope-fill"></i>
-          <h5>Email</h5>
-          <p>info@flavoro.com</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container py-5">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <a class="navbar-brand flavoro-logo" href="#home">
-            <span class="logo-icon"><i class="bi bi-egg-fried"></i></span>
-            <span>Flavoro<small>RESTAURANT</small></span>
-          </a>
-          <p class="mt-3 footer-copy">
-            Thank you for being a part of our journey. We can't wait to serve you the best meals.
-          </p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <div class="col-lg-3">
+            <h6>Contact Us</h6>
+            <p>
+              <i class="bi bi-geo-alt me-2"></i>123 Food Street, Flavor Town
+            </p>
+            <p><i class="bi bi-telephone me-2"></i>+1 (555) 123-4567</p>
+            <p><i class="bi bi-envelope me-2"></i>info@flavoro.com</p>
           </div>
         </div>
 
-        <div class="col-6 col-lg-2">
-          <h6>Quick Links</h6>
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#menu">Menu</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="col-6 col-lg-3">
-          <h6>Opening Hours</h6>
-          <p><strong>Monday - Thursday</strong><br>11:00 AM - 10:00 PM</p>
-          <p><strong>Friday - Saturday</strong><br>11:00 AM - 11:00 PM</p>
-          <p><strong>Sunday</strong><br>11:00 AM - 9:00 PM</p>
-        </div>
-
-        <div class="col-lg-3">
-          <h6>Contact Us</h6>
-          <p><i class="bi bi-geo-alt me-2"></i>123 Food Street, Flavor Town</p>
-          <p><i class="bi bi-telephone me-2"></i>+1 (555) 123-4567</p>
-          <p><i class="bi bi-envelope me-2"></i>info@flavoro.com</p>
+        <hr />
+        <div class="text-center copyright">
+          © <span id="year"></span> Flavoro Restaurant. All Rights Reserved.
         </div>
       </div>
+    </footer>
 
-      <hr>
-      <div class="text-center copyright">
-        © <span id="year"></span> Flavoro Restaurant. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
+    <!-- Back to top -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
 
-  <!-- Back to top -->
-  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="bi bi-arrow-up"></i>
-  </a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault(),
+      );
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
-</body>
+      // Disable key shortcuts for Inspect Element and View Source
+      document.addEventListener("keydown", (event) => {
+        // Prevent F12
+        if (event.key === "F12") {
+          event.preventDefault();
+        }
+
+        // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          ["I", "J", "C", "i", "j", "c"].includes(event.key)
+        ) {
+          event.preventDefault();
+        }
+
+        // Prevent Ctrl+U (View Source)
+        if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
 </html>
