@@ -253,142 +253,16 @@ body {
   opacity: 0;
 }
 
-/* =========================================================
-   CUSTOM CURSOR - DESKTOP
-   ========================================================= */
-
-/* Hide default cursor globally */
-*,
-*::before,
-*::after,
-html,
-body,
-a,
-button,
-input,
-textarea,
-select,
-label,
-[role="button"] {
-  cursor: none !important;
-}
-
-/* Ensure hover/active states don't bring back the pointer */
-a:hover,
-button:hover,
-input:hover,
-[role="button"]:hover,
-a:active,
-button:active {
-  cursor: none !important;
-}
-
-/* =========================================================
-   CUSTOM CURSOR BASE
-   ========================================================= */
-
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 32px;
-  height: 32px;
-
-  pointer-events: none;
-  z-index: 9999;
-
-  transform: translate(-10%, -10%);
-  transition: transform 0.05s ease-out;
-}
-
-/* =========================================================
-   ARC REACTOR PARTICLE TRAIL
-   ========================================================= */
-
-.cursor-trail {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 6px;
-  height: 6px;
-
-  background-color: #e6fcff;
-  border-radius: 50%;
-
-  pointer-events: none;
-  z-index: 9998;
-
-  box-shadow:
-    0 0 6px #80f3ff,
-    0 0 12px #00d8ff,
-    0 0 18px #0088ff;
-
-  animation: fadeOut 0.4s forwards ease-out;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.1);
-  }
-}
-
-/* =========================================================
-   ARC REACTOR CLICK / TOUCH EFFECT
-   ========================================================= */
-
+/* Custom Cursor: Hidden by default on Mobile & Touch Devices */
+.custom-cursor,
+.cursor-trail,
 .cursor-click-effect {
-  position: fixed;
-
-  width: 36px;
-  height: 36px;
-
-  border: 2px solid #80f3ff;
-  border-radius: 50%;
-
-  pointer-events: none;
-  z-index: 9997;
-
-  transform: translate(-50%, -50%) scale(0.2);
-
-  animation: arcPulse 0.4s ease-out forwards;
-
-  box-shadow:
-    0 0 12px #00d8ff,
-    inset 0 0 12px #00d8ff;
+  display: none !important;
 }
 
-@keyframes arcPulse {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0.2);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.5);
-  }
-}
-
-/* =========================================================
-   MOBILE / TABLET
-   ========================================================= */
-
-@media (hover: none), (pointer: coarse) {
-  /* Completely remove custom cursor */
-  .custom-cursor,
-  .cursor-trail {
-    display: none !important;
-  }
-
-  /* Restore normal touch behavior */
+/* Enable Custom Cursor ONLY on Desktop Screens (Min Width 992px) */
+@media (min-width: 992px) {
+  /* Hide default browser cursor on desktop */
   *,
   *::before,
   *::after,
@@ -399,58 +273,57 @@ button:active {
   input,
   textarea,
   select,
-  label,
-  [role="button"] {
-    cursor: auto !important;
+  label {
+    cursor: none !important;
   }
 
-  /* Remove tap highlight */
-  * {
-    -webkit-tap-highlight-color: transparent;
+  /* Custom Cursor Base */
+  .custom-cursor {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-10%, -10%);
+    transition: transform 0.05s ease-out;
   }
 
-  /* Touch effect */
-  .cursor-click-effect {
-    width: 42px;
-    height: 42px;
-
-    border-width: 2px;
-
-    box-shadow:
-      0 0 15px #00d8ff,
-      0 0 30px rgba(0, 216, 255, 0.5),
-      inset 0 0 15px #00d8ff;
-
-    animation: mobileArcPulse 0.6s ease-out forwards;
-  }
-}
-
-@keyframes mobileArcPulse {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0.15);
-  }
-
-  40% {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.8);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .custom-cursor,
+  /* Arc Reactor Particle Trail */
   .cursor-trail {
-    display: none !important;
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #e6fcff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    box-shadow:
+      0 0 6px #80f3ff,
+      0 0 12px #00d8ff,
+      0 0 18px #0088ff;
+    animation: fadeOut 0.4s forwards ease-out;
   }
 
-  *,
-  *::before,
-  *::after {
-    cursor: auto !important;
+  /* Arc Reactor Pulse / Click Effect */
+  .cursor-click-effect {
+    display: block !important;
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #80f3ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%) scale(0.2);
+    animation: arcPulse 0.4s ease-out forwards;
+    box-shadow:
+      0 0 12px #00d8ff,
+      inset 0 0 12px #00d8ff;
   }
 }
