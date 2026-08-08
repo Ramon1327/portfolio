@@ -2395,6 +2395,42 @@
       </div>
     </div>
 
+    <div class="custom-cursor" id="cursor">
+      <!-- Embedded SVG replicating the tech cursor with Arc Reactor blue colors -->
+      <svg viewBox="0 0 100 100" width="32" height="32">
+        <defs>
+          <!-- Deep Arc Reactor Glow -->
+          <filter id="arc-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <!-- Outer Arc Outer Shell -->
+        <path
+          d="M 15,10 L 85,50 L 50,65 L 35,90 Z"
+          fill="#031527"
+          stroke="#00d8ff"
+          stroke-width="5"
+          stroke-linejoin="round"
+          filter="url(#arc-glow)"
+        />
+        <!-- Tech Arc Lines -->
+        <path
+          d="M 25,22 L 70,48 M 28,30 L 45,68"
+          stroke="#80f3ff"
+          stroke-width="3"
+          stroke-dasharray="4,3"
+        />
+        <!-- Core Bright Reactor Triangle -->
+        <polygon
+          points="32,28 60,45 42,52"
+          fill="#e6fcff"
+          stroke="#00d8ff"
+          stroke-width="1.5"
+        />
+      </svg>
+    </div>
+
     <!-- Bootstrap 4 JavaScript Dependencies -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -2437,6 +2473,42 @@
         if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
           event.preventDefault();
         }
+      });
+    </script>
+    <script>
+      const cursor = document.getElementById("cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+
+        createTrailParticle(e.clientX, e.clientY);
+      });
+
+      function createTrailParticle(x, y) {
+        const trail = document.createElement("div");
+        trail.className = "cursor-trail";
+        trail.style.left = `${x + 4}px`;
+        trail.style.top = `${y + 4}px`;
+
+        document.body.appendChild(trail);
+
+        setTimeout(() => {
+          trail.remove();
+        }, 400);
+      }
+
+      document.addEventListener("click", (e) => {
+        const ripple = document.createElement("div");
+        ripple.className = "cursor-click-effect";
+        ripple.style.left = `${e.clientX}px`;
+        ripple.style.top = `${e.clientY}px`;
+
+        document.body.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 400);
       });
     </script>
   </body>

@@ -239,13 +239,94 @@ body {
 /* Image Transition Style */
 .theme-swap-img {
   transition:
-    transform 0.4s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
   backface-visibility: hidden;
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1);
 }
 
-/* Flip effect during image swap */
+/* Dissolve effect during image swap */
 .theme-swap-img.swapping {
-  transform: rotateY(90deg);
-  opacity: 0.5;
+  opacity: 0;
+}
+
+/* Hide default cursor globally */
+body,
+a,
+button,
+input {
+  cursor: none !important;
+}
+
+/* Custom Cursor Base */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-10%, -10%);
+  transition: transform 0.05s ease-out;
+}
+
+/* Arc Reactor Particle Trail */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #e6fcff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  /* Arc Reactor multi-layer glow effect */
+  box-shadow:
+    0 0 6px #80f3ff,
+    0 0 12px #00d8ff,
+    0 0 18px #0088ff;
+  animation: fadeOut 0.4s forwards ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+}
+
+/* Arc Reactor Pulse / Click Effect */
+.cursor-click-effect {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #80f3ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: arcPulse 0.4s ease-out forwards;
+  box-shadow:
+    0 0 12px #00d8ff,
+    inset 0 0 12px #00d8ff;
+}
+
+@keyframes arcPulse {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
 }
