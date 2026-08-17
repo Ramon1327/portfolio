@@ -351,47 +351,79 @@ body {
   }
 }
 
-/* Projects / Portfolios glowing highlight */
+/* =========================================
+   PROJECTS / PORTFOLIOS - THEME AWARE GLOW
+   ========================================= */
+
 .nav-link.portfolio-glow {
   position: relative;
   z-index: 1;
-  border-radius: 8px;
-  overflow: hidden;
-  isolation: isolate;
+  border-radius: 9px;
+
+  /* Automatically adapts to Light / Dark mode */
+  color: var(--text-color) !important;
+  background: var(--glass-bg);
+
+  overflow: visible;
+
+  /* Soft blue glow */
+  box-shadow:
+    0 0 5px rgba(0, 132, 255, 0.35),
+    0 0 12px rgba(0, 200, 255, 0.15);
+
+  animation: portfolioGlow 2s ease-in-out infinite alternate;
 }
 
-/* Animated glowing border */
+/* =========================================
+   ANIMATED BLUE / CYAN BORDER
+   ========================================= */
+
 .nav-link.portfolio-glow::before {
   content: "";
   position: absolute;
   inset: -2px;
+
   border-radius: 10px;
-  padding: 2px;
+
   background: linear-gradient(
     90deg,
-    #0066ff,
-    #00c8ff,
-    #0066ff,
-    #00c8ff,
-    #0066ff
+    #007bff,
+    #00c6ff,
+    #007bff,
+    #00e5ff,
+    #007bff
   );
+
   background-size: 300% 100%;
-  animation: portfolioBorderGlow 3s linear infinite;
+
+  animation: portfolioBorder 3s linear infinite;
+
   z-index: -2;
 }
 
-/* Dark inner layer so only the edge glows */
+/* =========================================
+   INNER BACKGROUND
+   Uses theme variables
+   ========================================= */
+
 .nav-link.portfolio-glow::after {
   content: "";
   position: absolute;
   inset: 2px;
-  border-radius: 6px;
-  background: var(--bs-body-bg, #212529);
+
+  border-radius: 7px;
+
+  /* Automatically becomes light/dark */
+  background: var(--glass-bg);
+
   z-index: -1;
 }
 
-/* Moving gradient */
-@keyframes portfolioBorderGlow {
+/* =========================================
+   MOVING BORDER
+   ========================================= */
+
+@keyframes portfolioBorder {
   0% {
     background-position: 0% 50%;
   }
@@ -401,30 +433,71 @@ body {
   }
 }
 
-/* Blue glow around the edge */
-.nav-link.portfolio-glow {
-  box-shadow:
-    0 0 5px rgba(0, 102, 255, 0.5),
-    0 0 12px rgba(0, 153, 255, 0.35);
-  animation: portfolioOuterGlow 2s ease-in-out infinite alternate;
-}
+/* =========================================
+   GLOW PULSE
+   ========================================= */
 
-@keyframes portfolioOuterGlow {
+@keyframes portfolioGlow {
   from {
     box-shadow:
-      0 0 4px rgba(0, 102, 255, 0.4),
-      0 0 8px rgba(0, 153, 255, 0.25);
+      0 0 4px rgba(0, 123, 255, 0.3),
+      0 0 8px rgba(0, 200, 255, 0.15);
   }
 
   to {
     box-shadow:
-      0 0 8px rgba(0, 140, 255, 0.8),
-      0 0 18px rgba(0, 180, 255, 0.5);
+      0 0 8px rgba(0, 123, 255, 0.65),
+      0 0 18px rgba(0, 200, 255, 0.35);
   }
 }
 
-/* Make the icon/text stay above the effects */
-.nav-link.portfolio-glow i,
-.nav-link.portfolio-glow {
-  color: #fff;
+/* =========================================
+   ICON
+   ========================================= */
+
+.nav-link.portfolio-glow i {
+  color: var(--accent-color) !important;
+}
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.nav-link.portfolio-glow:hover {
+  color: var(--accent-color) !important;
+  background: var(--glass-bg-hover);
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+[data-bs-theme="dark"] .nav-link.portfolio-glow {
+  color: var(--text-color) !important;
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 0 6px rgba(56, 189, 248, 0.4),
+    0 0 14px rgba(56, 189, 248, 0.18);
+}
+
+[data-bs-theme="dark"] .nav-link.portfolio-glow::after {
+  background: rgba(15, 23, 42, 0.75);
+}
+
+/* =========================================
+   LIGHT MODE
+   ========================================= */
+
+[data-bs-theme="light"] .nav-link.portfolio-glow {
+  color: var(--text-color) !important;
+  background: rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 0 6px rgba(2, 132, 199, 0.35),
+    0 0 14px rgba(0, 180, 255, 0.15);
+}
+
+[data-bs-theme="light"] .nav-link.portfolio-glow::after {
+  background: rgba(255, 255, 255, 0.55);
 }
