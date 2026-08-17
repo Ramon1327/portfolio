@@ -350,3 +350,81 @@ body {
     transform: translate(-50%, -50%) scale(2.5);
   }
 }
+
+/* Projects / Portfolios glowing highlight */
+.nav-link.portfolio-glow {
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated glowing border */
+.nav-link.portfolio-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #0066ff,
+    #00c8ff,
+    #0066ff,
+    #00c8ff,
+    #0066ff
+  );
+  background-size: 300% 100%;
+  animation: portfolioBorderGlow 3s linear infinite;
+  z-index: -2;
+}
+
+/* Dark inner layer so only the edge glows */
+.nav-link.portfolio-glow::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 6px;
+  background: var(--bs-body-bg, #212529);
+  z-index: -1;
+}
+
+/* Moving gradient */
+@keyframes portfolioBorderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Blue glow around the edge */
+.nav-link.portfolio-glow {
+  box-shadow:
+    0 0 5px rgba(0, 102, 255, 0.5),
+    0 0 12px rgba(0, 153, 255, 0.35);
+  animation: portfolioOuterGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes portfolioOuterGlow {
+  from {
+    box-shadow:
+      0 0 4px rgba(0, 102, 255, 0.4),
+      0 0 8px rgba(0, 153, 255, 0.25);
+  }
+
+  to {
+    box-shadow:
+      0 0 8px rgba(0, 140, 255, 0.8),
+      0 0 18px rgba(0, 180, 255, 0.5);
+  }
+}
+
+/* Make the icon/text stay above the effects */
+.nav-link.portfolio-glow i,
+.nav-link.portfolio-glow {
+  color: #fff;
+}
